@@ -1,0 +1,17 @@
+.buyers {
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.buyers__table th {
+  text-align: left;
+}
+.buyers__table td {
+  padding: 5px;
+}
+.buyers__table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.buyers__sort {
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+.header {
+  padding: 30px;
+  background-color: bisque;
+  height: 100px;
+  position: relative;
+}
+.header__button {
+    position: absolute;
+    right: 30px;
+}

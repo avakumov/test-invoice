@@ -1,0 +1,26 @@
+.sidebar {
+  padding-top: 30px;
+  width: 150px;
+}
+.sidebar__items {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sidebar__item {
+  padding-bottom: 15px;
+  text-align: right;
+}
+.sidebar__link {
+  font-weight: bold;
+  color: gray;
+}
+.sidebar__avatar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 20px;
+}

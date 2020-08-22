@@ -1,0 +1,35 @@
+.login {
+  background-color: ivory;
+  padding: 15px;
+  width: 250px;
+  margin: 0 auto;
+}
+.login__avatar {
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 40px;
+  width: 40px;
+}
+.login__label {
+  margin-bottom: 15px;
+  display: block;
+  position: relative;
+}
+.login__input {
+  display: block;
+  width: 100%;
+  outline: none;
+  height: 40px;
+  border: 1px solid #e6e6e6;
+  padding: 0px 10px;
+}
+.login__input--error {
+  display: block;
+  width: 100%;
+  outline: none;
+  height: 40px;
+  border: 1px solid lightcoral;
+  padding: 0px 10px;
+}

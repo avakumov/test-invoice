@@ -1,0 +1,25 @@
+.list-terminals__items {
+  padding-top: 15px;
+}
+
+.list-terminals__table th {
+  text-align: left;
+}
+th.list-terminals__title {
+  width: 200px;
+}
+
+th.list-terminals__description {
+  width: 300px;
+}
+th.list-terminals__actions {
+  width: 100px;
+}
+
+.list-terminals__table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.list-terminals__table td {
+  padding: 5px;
+}

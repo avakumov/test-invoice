@@ -1,0 +1,12 @@
+.buyer {
+  min-width: 657px;
+}
+.buyer__info {
+  margin-left: 30px;
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #838687;
+  width: fit-content;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+}

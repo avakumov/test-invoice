@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.button--default {
+  border: 1px solid #838687;
+  color: #838687;
+  border-radius: 4px;
+  padding: 5px 15px 5px 15px;
+  justify-content: center;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  transition: all 0.5s;
+  outline: none;
+}
+.button--default:hover {
+  background-color: #3e5569;
+  color: #d1d6d8;
 }
 
-.App-link {
-  color: #61dafb;
+.button--danger {
+  border: 1px solid #cf9598;
+  color: #cf9598;
+  border-radius: 4px;
+  padding: 5px 15px 5px 15px;
+  justify-content: center;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  transition: all 0.5s;
+  outline: none;
+}
+.button--danger:hover {
+  background-color: #3e5569;
+  color: #cf9598;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  /* font-family: 'PT Serif', serif; */
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #838687;
 }

@@ -1,0 +1,38 @@
+.terminals {
+  padding: 30px 0px 0px 30px;
+  min-width: 657px;
+}
+.terminals__label {
+  margin-bottom: 15px;
+  display: block;
+  position: relative;
+}
+.terminals__input {
+  display: block;
+  width: 100%;
+  outline: none;
+  height: 40px;
+  border: 1px solid #e6e6e6;
+  padding: 0px 10px;
+  color: #838687;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.terminals__textarea {
+  outline: none;
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+  height: 150px;
+  resize: none;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  color: #838687;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
