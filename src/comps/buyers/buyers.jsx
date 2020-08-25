@@ -1,58 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import _ from "lodash";
 import "./buyers.css";
 
 const Buyers = ({ buyers }) => {
+
   const [sortedBy, setSortedBy] = useState({
     name: "asc",
     avarageCheck: "asc",
     countPurchases: "asc",
     totalRevenues: "asc",
   });
-  const [prepData, setPrepData] = useState(prepareData(buyers));
+  
 
-  //Подготвливает покупки для отображения, пользователи не повторяются
-  function prepareData(buyers) {
-    const resultBuyers = [];
-    buyers.forEach((buyer) => {
-      const existedBuyerIndex = resultBuyers.findIndex(
-        (b) => buyer.clientId === b.clientId
-      );
-      if (existedBuyerIndex >= 0) {
-        resultBuyers[existedBuyerIndex].countPurchases++;
-        resultBuyers[existedBuyerIndex].avarageCheck =
-          (resultBuyers[existedBuyerIndex].totalRevenues + Number(buyer.buy)) /
-          resultBuyers[existedBuyerIndex].countPurchases;
-        resultBuyers[existedBuyerIndex].totalRevenues += Number(buyer.buy);
-      } else {
-        resultBuyers.push({
-          clientId: buyer.clientId,
-          name: buyer.name,
-          countPurchases: 1,
-          totalRevenues: Number(buyer.buy),
-          avarageCheck: Number(buyer.buy),
-        });
-      }
-    });
-    return resultBuyers;
-  }
+  const [sortedBuyers, setSortedBuyers] = useState([]);
+  useEffect(() => setSortedBuyers(buyers), [buyers])
+ 
 
   const handleSort = (column) => {
     let copySortedBy = { ...sortedBy };
 
     if (sortedBy[column] === "asc") {
-      const lodashSorted = _.orderBy(prepData, [column], ["desc"]);
-      setPrepData(lodashSorted);
+      const lodashSorted = _.orderBy(sortedBuyers, [column], ["desc"]);
+      setSortedBuyers(lodashSorted);
       copySortedBy[column] = "desc";
     } else {
-      const lodashSorted = _.orderBy(prepData, [column], ["asc"]);
-      setPrepData(lodashSorted);
+      const lodashSorted = _.orderBy(sortedBuyers, [column], ["asc"]);
+      setSortedBuyers(lodashSorted);
       copySortedBy[column] = "asc";
     }
     setSortedBy(copySortedBy);
   };
-  const renderedBuyers = prepData.map((buyer) => (
+  const renderedBuyers = sortedBuyers.map((buyer) => (
     <tr key={buyer.clientId}>
       <td>
         <div className="buyers__item-title">

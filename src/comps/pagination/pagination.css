@@ -1,0 +1,32 @@
+.pagination__actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination__page {
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+}
+.pagination__pages{
+    display: flex;
+}
+.pagination__per-page {
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+}
+.pagination__per-pages {
+    display: flex;
+}
+.pagination__page--current {
+    background-color: lightseagreen;
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+    color: white
+}
+
+.pagination__per-page--current{
+    background-color: lightseagreen;
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+    color: white
+}

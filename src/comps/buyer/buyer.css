@@ -10,3 +10,15 @@
   font-weight: bold;
   letter-spacing: 0.2px;
 }
+.buyer__total-revenues {
+  padding-bottom: 10px;
+}
+.buyer__avarage-check {
+  padding-bottom: 10px;
+}
+.buyer__clientId {
+  padding-bottom: 10px;
+}
+.buyer__name {
+  padding-bottom: 10px;
+}

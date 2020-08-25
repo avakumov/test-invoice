@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import Buyer from "./comps/buyer/buyer";
-import Buyers from "./comps/buyers/buyers";
 import Terminals from "./comps/terminals/terminals";
 import SideBar from "./comps/sidebar/sidebar";
 import Login from "./comps/Login/login";
 import Footer from "./comps/footer/footer";
 import Header from "./comps/header/header";
+import Pagination from "./comps/pagination/pagination";
 import { history } from "./helpers/history";
 import { buyers } from "./helpers/fakeData";
 import NotFound from "./comps/not-found/not-found";
+import {prepareData} from './helpers/prepare-data'
 
 function App() {
   const [logged, setLogged] = useState(false);
   const [urlAvatar, setUrlAvatar] = useState("");
+
 
   const login = (name, password, urlAvatar) => {
     //server api request
@@ -49,12 +51,12 @@ function App() {
             <Route
               exact
               path="/buyers"
-              component={() => <Buyers buyers={buyers} />}
+              component={() => <Pagination buyers={prepareData(buyers)} />}
             />
             <Route
               exact
               path="/"
-              component={() => <Buyers buyers={buyers} />}
+              component={() => <Pagination buyers={prepareData(buyers)} />}
             />
             <Route
               exact
