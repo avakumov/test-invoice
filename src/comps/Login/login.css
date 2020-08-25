@@ -3,6 +3,7 @@
   padding: 15px;
   width: 250px;
   margin: 0 auto;
+  border: 1px solid lightgray;
 }
 .login__avatar {
   margin: auto;
@@ -32,4 +33,29 @@
   height: 40px;
   border: 1px solid lightcoral;
   padding: 0px 10px;
+}
+.login__error-password {
+  text-align: center;
+  background-color: lightyellow;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 5px;
+  
+}
+.login__error-username {
+  text-align: center;
+  background-color: lightyellow;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 5px;
+  
+}
+.login__error-username.hide{
+  display: none;
+}
+.login__error-password.hide{
+  display: none;
+}
+.login__messages {
+  height: 60px;
 }

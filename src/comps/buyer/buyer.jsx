@@ -11,7 +11,7 @@ const Buyer = ({ match, buyers }) => {
     specificBuyer.forEach(buy => {
       buysAll+=buy.buy
     });
-    const buys = specificBuyer.map((buy) => <div>{buy.buy}p.</div>);
+    const buys = specificBuyer.map((buy, indx) => <div key={buy.buy+indx}>{buy.buy}p.</div>);
     
     return (
       <div className="buyer">

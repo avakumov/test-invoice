@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./login.css";
 
 const Login = ({ login }) => {
@@ -8,11 +8,22 @@ const Login = ({ login }) => {
   const [validPassword, setValidPassword] = useState(false);
   const [urlAvatar, setUrlAvatar] = useState("");
 
+  const errorMessageUsername = useRef(null);
+  const errorMessagePassword = useRef(null);
+
   const handleLogin = (e) => {
     e.preventDefault();
+    
     if (validName && validPassword) {
       login(name, password, urlAvatar);
-      
+    } 
+    if (!validName) {
+      errorMessageUsername.current.classList.remove('hide')
+      setTimeout(() => errorMessageUsername.current.classList.add('hide'), 4000);
+    }
+    if (!validPassword) {
+      errorMessagePassword.current.classList.remove('hide')
+      setTimeout(() => errorMessagePassword.current.classList.add('hide'), 4000);
     }
   };
 
@@ -56,7 +67,18 @@ const Login = ({ login }) => {
   };
 
   return (
-    <div className="login">
+    <div className="login__outer">
+      <div className="login__messages">
+        <div className="login__error-username hide" ref={errorMessageUsername}>
+          Введите имя пользователя github
+      </div>
+      <div className="login__error-password hide" ref={errorMessagePassword}>
+          Пароль должен быть минимум 8 символов и содержать одну цифру и заглавную букву
+      </div>
+      </div>
+      
+      <div className="login">
+      
       <form className="login__form" onSubmit={handleLogin}>
         <div
           className="login__avatar"
@@ -66,7 +88,7 @@ const Login = ({ login }) => {
         ></div>
 
         <label htmlFor="name" className="login__label">
-          Email address
+          Username
           <input
             type="text"
             id="name"
@@ -74,7 +96,6 @@ const Login = ({ login }) => {
             onChange={handlerChangeName}
             className={validName ? "login__input" : "login__input--error"}
             placeholder="Name"
-            required
           />
         </label>
 
@@ -87,7 +108,6 @@ const Login = ({ login }) => {
             onChange={handlerChangePassword}
             className={validPassword ? "login__input" : "login__input--error"}
             placeholder="Password"
-            required
           />
         </label>
 
@@ -95,7 +115,10 @@ const Login = ({ login }) => {
           Sign in
         </button>
       </form>
+      
     </div>
+    </div>
+   
   );
 };
 
